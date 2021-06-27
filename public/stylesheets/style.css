@@ -27,12 +27,12 @@ p {
 }
 
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  max-width: 45em;
+  padding: 2em;
 }
 
 .message-container {
-  max-width: 45em;
   background-color: var(--message-background2);
   color: var(--text-color);
   padding: 1em;
@@ -52,10 +52,13 @@ body {
   margin-bottom: 1em;
 }
 
+.message-text {
+  white-space: pre-wrap;
+}
+
 .new-message-container {
   display: flow-root;
   margin: 1em 0em;
-  max-width: 45em;
 }
 
 .new-message-btn {
@@ -71,4 +74,60 @@ body {
 
 .new-message-btn:active {
   background-color: var(--message-background);
+}
+
+form {
+  margin-top: 2em;
+  width: 100%;
+  display: flow-root;
+}
+
+.form-elements {
+  display: grid;
+  grid-template-columns: 5em 1fr;
+  grid-gap: 0.75em;
+}
+
+label {
+  text-align: right;
+  grid-column: 1/2;
+  padding-top: 0.25em;
+}
+
+input {
+  padding: 0.3em 0.5em;
+  font-size: 1.1em;
+  grid-column: 2/3;
+}
+
+textarea {
+  padding: 0.3em 0.5em;
+  font-size: 1.1em;
+  height: 8em;
+  grid-column: 2/3;
+
+  white-space: pre-wrap;
+}
+
+.submit-form {
+  margin-top: 1em;
+  float: right;
+
+  border: none;
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  padding: 0.75em 1.5em;
+  font-weight: 600;
+  box-shadow: 1px 1px 3px grey;
+  cursor: pointer;
+}
+
+.submit-form:active {
+  background-color: var(--message-background);
+}
+
+@media (max-width: 420px) {
+  body {
+    padding: 0.5em;
+  }
 }

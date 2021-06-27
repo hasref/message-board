@@ -34,4 +34,15 @@ router.get("/new", function (req, res, next) {
   res.render("form");
 });
 
+/* form submission */
+router.post("/new", function (req, res, next) {
+  sampleMessages.unshift({
+    text: req.body.message,
+    author: req.body.author,
+    date: new Date(),
+  });
+
+  res.redirect("/");
+});
+
 module.exports = router;
