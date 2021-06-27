@@ -2,4 +2,12 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  -
+  div.messages
+    each val in messages
+      div.message-container
+        div.message-info
+          div.message-author #{val.author}
+          div.message-date #{val.date.toDateString()}
+        div.message-text #{val.text}

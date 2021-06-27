@@ -4,5 +4,38 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.message-container {
+  max-width: 60em;
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+
+div.message-container:last-of-type {
+  border-bottom: 1px solid black;
+}
+
+.message-info {
+  flex-basis: 30%;
+  padding: 1em;
+  border-right: 1px solid grey;
+}
+
+.message-author {
+  margin-bottom: 0.5em;
+  font-weight: bolder;
+}
+
+.message-date {
+  opacity: 0.7;
+}
+
+.message-text {
+  flex-basis: 80%;
+  padding: 1em;
 }
