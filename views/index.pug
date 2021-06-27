@@ -10,5 +10,5 @@ block content
     each val in messages
       div.message-container
         div.message-author #{val.author}
-        div.message-date #{val.date.toDateString()}
+        div.message-date #{parse(val.date)}
         div.message-text #{val.text}

@@ -24,9 +24,28 @@ const sampleMessages = [
   },
 ];
 
+// this should really be in the frontend
+const parseDate = (date) => {
+  const currTime = new Date();
+  const minuteDiff = currTime.getMinutes() - date.getMinutes();
+  if (minuteDiff < 1) {
+    return "Just now";
+  } else if (minuteDiff < 2) {
+    return "One minute ago";
+  } else if (minuteDiff < 59) {
+    return `${minuteDiff} minutes ago`;
+  } else {
+    return `${date.getHours()}:${date.getMinutes()} ${date.toDateString()}`;
+  }
+};
+
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Messages", messages: sampleMessages });
+  res.render("index", {
+    title: "Message Board",
+    messages: sampleMessages,
+    parse: parseDate,
+  });
 });
 
 /* GET form page */
