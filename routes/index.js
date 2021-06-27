@@ -29,4 +29,9 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Messages", messages: sampleMessages });
 });
 
+/* GET form page */
+router.get("/new", function (req, res, next) {
+  res.render("form");
+});
+
 module.exports = router;

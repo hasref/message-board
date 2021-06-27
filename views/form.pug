@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1 Add New Message
+
+    form(action='/new' method='POST')
+        div.form-element
+            label(for='author') Author
+            input#author(name='author' type='text' required)
+        div.form-element  
+            label(for='message') Message
+            input#message(name='message' type='text' required)
+        button.submit-form Submit Message
